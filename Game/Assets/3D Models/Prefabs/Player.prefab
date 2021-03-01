@@ -146,6 +146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd522dbb37d80a4785016831e259f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
+  stamina: 0
+  maxStamina: 100
+  strength: 0
 --- !u!54 &4748443466524565905
 Rigidbody:
   m_ObjectHideFlags: 0
