@@ -5,40 +5,60 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int health = 100;
-    public int maxHealth = 100;
-    public int stamina = 100;
-    public int maxStamina = 100;
-    public int strength;
+    public double health = 100.0f;
+    public double healthMax = 100.0f;
+    public double stamina = 100.0f;
+    public double staminaMax = 100.0f;
+    public double strength;
 
-    void Start()
+    bool isRuning(Vector3 move)
     {
-        health = maxHealth;
-        stamina = maxStamina;
+        return stamina > 0 && move != Vector3.zero;
     }
 
     void move()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        PlayerController player = GameObject.Find("Player(Clone)").GetComponent<PlayerController>();
+        if (isRuning(player.move) && Input.GetKey(KeyCode.LeftShift))
         {
-            GameObject.Find("Player(Clone)").GetComponent<PlayerController>().speed = 5.0f;
+            player.speed = 5.0f;
+            stamina -= 0.05;
+            if (stamina <= 0)
+            {
+                stamina = 0;
+                player.speed = 2.0f;
+            }
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            GameObject.Find("Player(Clone)").GetComponent<PlayerController>().speed = 2.0f;
+            player.speed = 2.0f;
+        }
+        else if (stamina < staminaMax)
+        {
+            stamina += 0.01;
+            if (stamina > staminaMax)
+            {
+                stamina = staminaMax;
+            }
         }
     }
 
+    
     void hit(int damage)
     {
-        if (damage < 1)
+        if (damage < 0)
+        {
             return;
+        }
         health -= damage;
         if (health <= 0)
+        {
             Debug.Log("Dead");
+        }
     }
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         move();
         if (Input.GetKeyDown(KeyCode.RightShift))

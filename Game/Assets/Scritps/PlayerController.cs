@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 2.0f;
 
     public Vector3 jump;
+    public Vector3 move;
     public float jumpForce = 2.0f;
     public bool isGrounded;
     Rigidbody rb;
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
         float hMove = -Input.GetAxisRaw("Horizontal");
         float vMove = Input.GetAxisRaw("Vertical");
 
-        Vector3 move = new Vector3(vMove, 0.0f, hMove);
+        move = new Vector3(vMove, 0.0f, hMove);
         if (move != Vector3.zero)
         {
             transform.Translate(move * speed * Time.deltaTime, Space.World);
