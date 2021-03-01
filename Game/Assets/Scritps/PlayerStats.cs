@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    // Start is called before the first frame update
     public double health = 100.0f;
     public double healthMax = 100.0f;
     public double stamina = 100.0f;
     public double staminaMax = 100.0f;
     public double strength;
 
+    // Checks if the player can run and if he is actually moving
+    // Note : used to not waste stamina just by holding "LeftShift".
     bool isRuning(Vector3 move)
     {
         return stamina > 0 && move != Vector3.zero;
@@ -18,7 +19,10 @@ public class PlayerStats : MonoBehaviour
 
     void move()
     {
+        // Get the PlayerController Component from object
         PlayerController player = GameObject.Find("Player(Clone)").GetComponent<PlayerController>();
+
+
         if (isRuning(player.move) && Input.GetKey(KeyCode.LeftShift))
         {
             player.speed = 5.0f;
@@ -44,7 +48,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     
-    void hit(int damage)
+    void getHit(int damage)
     {
         if (damage < 0)
         {
@@ -54,16 +58,16 @@ public class PlayerStats : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Dead");
+            //? Implement death mechanics here
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         move();
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
-            hit(10);
+            getHit(10);
             Debug.Log(health);
         }
     }
