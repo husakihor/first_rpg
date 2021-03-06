@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2295429988390521822}
   - component: {fileID: 4053228808077786900}
   m_Layer: 0
-  m_Name: bronzecoin
+  m_Name: BronzeCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2539760055527710401}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 3.279, y: -5.02, z: 3.51}
-  m_LocalScale: {x: 12, y: 12, z: 0.3}
+  m_LocalScale: {x: 6, y: 6, z: 0.15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
