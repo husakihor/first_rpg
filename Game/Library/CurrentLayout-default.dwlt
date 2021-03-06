@@ -69,8 +69,8 @@ MonoBehaviour:
     y: 486
     width: 430
     height: 461
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 66
+  controlID: 47
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 109
+  controlID: 16
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 110
+  controlID: 113
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -326,9 +326,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 6a370000
       m_LastClickedID: 0
-      m_ExpandedIDs: 90faffffb0faffffc6faffff68fbffff
+      m_ExpandedIDs: 68fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -429,20 +429,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Textures/Materials
+    - Assets/3D Models/Prefabs/Food
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Textures/Materials
+  - Assets/3D Models/Prefabs/Food
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\UnityProjects\First_RPG\first_rpg\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 06340000
-    m_LastClickedID: 13318
-    m_ExpandedIDs: 00000000f4330000f6330000f833000000ca9a3b
+    scrollPos: {x: 0, y: 19}
+    m_SelectedIDs: 66370000
+    m_LastClickedID: 14182
+    m_ExpandedIDs: 00000000283400002a3400002c3400003c34000040340000463400004834000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -470,7 +470,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f4330000f6330000f8330000
+    m_ExpandedIDs: 00000000283400002a3400002c340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -654,9 +654,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.0032094668, y: -2.5568554, z: -0.96833324}
+    m_Target: {x: 1.8083937, y: -1.8731359, z: -0.014218584}
     speed: 2
-    m_Value: {x: 0.003209467, y: -2.5568554, z: -0.96833324}
+    m_Value: {x: 1.8083937, y: -1.8731359, z: -0.014218584}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -702,13 +702,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.08923621, y: 0.63567257, z: -0.07432614, w: 0.76317567}
+    m_Target: {x: 0.217103, y: 0.69002384, z: -0.2301209, w: 0.6509875}
     speed: 2
-    m_Value: {x: 0.08809117, y: 0.63578206, z: -0.073372394, w: 0.7633071}
+    m_Value: {x: 0.21807848, y: 0.6896755, z: -0.23115487, w: 0.65065885}
   m_Size:
-    m_Target: 2.713147
+    m_Target: 2.6926048
     speed: 2
-    m_Value: 2.413147
+    m_Value: 2.9926047
   m_Ortho:
     m_Target: 0
     speed: 2
