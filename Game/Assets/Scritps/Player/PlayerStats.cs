@@ -22,8 +22,9 @@ public class PlayerStats : MonoBehaviour
         // Get the PlayerController Component from object
         PlayerController player = GameObject.Find("Player(Clone)").GetComponent<PlayerController>();
 
+        bool isRunPressed = Input.GetKey(KeyCode.LeftShift);
 
-        if (isRuning(player.move) && Input.GetKey(KeyCode.LeftShift))
+        if (isRuning(player.move) && isRunPressed)
         {
             Debug.Log("IsRunning");
             player.speed = 5.0f;
@@ -34,16 +35,16 @@ public class PlayerStats : MonoBehaviour
                 player.speed = 2.0f;
             }
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (!isRunPressed)
         {
             player.speed = 2.0f;
-        }
-        else if (stamina < staminaMax)
-        {
-            stamina += 0.01;
-            if (stamina > staminaMax)
+            if (stamina < staminaMax)
             {
-                stamina = staminaMax;
+                stamina += 0.01;
+                if (stamina > staminaMax)
+                {
+                    stamina = staminaMax;
+                }
             }
         }
     }

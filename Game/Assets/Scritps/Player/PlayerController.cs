@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Execute a jump if "Space" key is pressed
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
