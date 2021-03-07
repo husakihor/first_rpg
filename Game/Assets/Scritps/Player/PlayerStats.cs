@@ -25,6 +25,7 @@ public class PlayerStats : MonoBehaviour
 
         if (isRuning(player.move) && Input.GetKey(KeyCode.LeftShift))
         {
+            Debug.Log("IsRunning");
             player.speed = 5.0f;
             stamina -= 0.05;
             if (stamina <= 0)
