@@ -201,6 +201,18 @@ CapsuleCollider:
   m_Height: 2.7748513
   m_Direction: 1
   m_Center: {x: 0.0027033389, y: 1.4418299, z: 6.445261e-10}
+--- !u!114 &1991840693039761521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2234042949133731352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af61d5dbfaf55ea4b815153f70e5fba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3067723445113973492
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,6 +510,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4714518072642534, guid: aaf96304138cd1e468d96168dd00538c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95212122356877512, guid: aaf96304138cd1e468d96168dd00538c,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: de44b5ac9a5789e45a5ecb062ea2f5e0, type: 3}
+    - target: {fileID: 95212122356877512, guid: aaf96304138cd1e468d96168dd00538c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 130606a48ec608f4fbf66655c0640db0, type: 2}
+    - target: {fileID: 95212122356877512, guid: aaf96304138cd1e468d96168dd00538c,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 137028016328576590, guid: aaf96304138cd1e468d96168dd00538c,
