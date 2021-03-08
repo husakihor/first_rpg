@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThirdPersonController : MonoBehaviour
 {
-
+    public Animator animator;
     public CharacterController controller;
     public Transform camera;
     public Transform groundCheck;
@@ -19,15 +19,29 @@ public class ThirdPersonController : MonoBehaviour
 
     public float jumpHeight = 1f;
 
+    int isJumpingHash;
+    int isGroundedHash;
+
+    void Start() 
+    {
+        isJumpingHash = Animator.StringToHash("isJumping");
+        isGroundedHash = Animator.StringToHash("isGrounded");
+    }
+
     // Update is called once per frame
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        bool isAnimGrounded = animator.GetBool(isGroundedHash);
 
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+            animator.SetBool(isJumpingHash, false);
+            animator.SetBool(isGroundedHash, true);
         }
+
+        bool isJumping = animator.GetBool(isJumpingHash);
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -44,10 +58,10 @@ public class ThirdPersonController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
-            Debug.Log("1");
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            animator.SetBool(isJumpingHash, true);
+            animator.SetBool(isGroundedHash, false);
         }
-
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);

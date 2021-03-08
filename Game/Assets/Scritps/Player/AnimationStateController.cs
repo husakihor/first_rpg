@@ -22,10 +22,12 @@ public class AnimationStateController : MonoBehaviour
         bool forwardPressed = Input.GetKey("z") || Input.GetKey("s") ||
                               Input.GetKey("q") || Input.GetKey("d");
         bool runPressed = Input.GetKey("left shift");
+        bool jumpPressed = Input.GetKey("space");
 
 
         bool isWalking = animator.GetBool(isWalkingHash);
         bool isRunning = animator.GetBool(isRunningHash);
+
 
         if (!isWalking && forwardPressed)
         {
