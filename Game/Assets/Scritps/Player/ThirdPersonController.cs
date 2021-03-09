@@ -10,7 +10,7 @@ public class ThirdPersonController : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-    public float speed = 6f;
+    public float speed;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     public float gravity = -18.62f;
@@ -24,8 +24,7 @@ public class ThirdPersonController : MonoBehaviour
 
     void Start() 
     {
-        isJumpingHash = Animator.StringToHash("isJumping");
-        isGroundedHash = Animator.StringToHash("isGrounded");
+        speed = 5f;
     }
 
     // Update is called once per frame
@@ -36,12 +35,18 @@ public class ThirdPersonController : MonoBehaviour
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f;
-            animator.SetBool(isJumpingHash, false);
-            animator.SetBool(isGroundedHash, true);
+            velocity.y = -1f;
         }
 
-        bool isJumping = animator.GetBool(isJumpingHash);
+        bool runPressed = Input.GetKey("left shift");
+        if (runPressed)
+        {
+            speed = 8f;
+        }
+        if (!runPressed)
+        {
+            speed = 5f;
+        }
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -59,8 +64,6 @@ public class ThirdPersonController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-            animator.SetBool(isJumpingHash, true);
-            animator.SetBool(isGroundedHash, false);
         }
 
         velocity.y += gravity * Time.deltaTime;
